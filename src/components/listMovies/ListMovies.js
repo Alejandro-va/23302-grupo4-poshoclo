@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+import { Link } from "react-router-dom";
 //REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../../feactures/movies/moviesSlice";
@@ -18,7 +19,11 @@ const ListMovies = () => {
     <div>
       <h1>LisMovies</h1>
       {selectorMovie.map((el) => (
-        <div>{el.Title}</div>
+        <ul>
+          <li>
+            <Link to={`/detailMovies/${el.imdbID}`}> {el.Title}</Link>
+          </li>
+        </ul>
       ))}
     </div>
   );

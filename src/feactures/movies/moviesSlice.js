@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 //KEY y URL para la api
 import movieApi from "../../common/api/movieApi";
-import { APIKey } from "../../common/api/movieKey";
+
 
 const initialState = { stateMovies: [] };
 
@@ -25,7 +25,6 @@ export const moviesSlice = createSlice({
 export default moviesSlice.reducer;
 
 export const fetchMovies = createAsyncThunk("movies/get", async () => {
-  const response = await movieApi.get(`?apikey=${APIKey}&s=harry&t=movie`);
-  const { Search } = response.data;
-  return Search;
+  const response = await movieApi.get(`3/movie/popular`);
+  return response.data.results;
 });

@@ -1,40 +1,45 @@
-import React, { useEffect } from "react";
-
 import { Link } from "react-router-dom";
 //REDUX
 import { useDispatch, useSelector } from "react-redux";
 
-import { Carousel } from '@trendyol-js/react-carousel';
+//del carousel
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
 
 
-
-const ListMovies = () => {
-  
-  
+export default function ListMovies() {
   const selectorMovie = useSelector((state) => state.storeMovie.stateMovies);
   console.log(selectorMovie)
-   
 
   return (
-    <div>
-      <h1>LisMovies</h1>
-      <Carousel show={3.5} slide={3} swiping={true}>
-        {selectorMovie.map((el) => (
-          <div key={el.id}>
-            <ul>
-            <li>
-              <Link to={`/detailMovies/${el.id}`}> {el.title}</Link>
-              <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
-              
-            </li>
-          </ul>
-          </div>
-        ))}
-      </Carousel>
-    </div>
+    <>
+    <h1>LisMovies</h1>
+      <Swiper
+        slidesPerView={10}
+        spaceBetween={10}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+          
+      {selectorMovie.map((el) => (
+          <SwiperSlide> 
+            <Link to={`/detailMovies/${el.id}`}> 
+              {el.title} 
+              <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100px" alt="" />
+            </Link>
+            
+          </SwiperSlide>
+      ))}
+        
+      </Swiper>
+    </>
   );
-};
-
-export default ListMovies;
-
-
+}

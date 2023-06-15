@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+button[data-direction=left],button[data-direction=right] {
+  background: url(https://cdn.dsmcdn.com/web/production/slick-arrow.svg) 50% no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 80px;
+  outline: 0;
+  position: relative;
+  top: 80px
+}
+
+button[data-direction=left]{
+  transform: rotate(180deg);
+}

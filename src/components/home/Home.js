@@ -5,16 +5,17 @@ import DetailMovies from "../detailMovies/DetailMovies";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../../feactures/movies/moviesSlice";
+import { fetchGenres } from "../../feactures/genres/genresSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchMovies());
+    dispatch(fetchGenres());
   }, [dispatch]);
 
   return (
     <div>
-      Home
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ListMovies />} />

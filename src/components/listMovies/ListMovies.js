@@ -8,37 +8,54 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
+import CardMovies from "./cardMovie";
+import { useState } from "react";
 
 
 export default function ListMovies() {
   const selectorMovie = useSelector((state) => state.storeMovie.stateMovies);
   console.log(selectorMovie)
 
+  const [idSeleccionado, setIdSeleccionado] = useState();
+
+   
+
   return (
     <>
-    <h1>LisMovies</h1>
+    <h3>Populares</h3>
       <Swiper
-        slidesPerView={10}
+        slidesPerView={4}
         spaceBetween={10}
         loop={true}
-        pagination={{
-          clickable: true,
+        breakpoints={{
+          640: {
+            slidesPerView: 5,
+            spaceBetween: 5,
+          },
+          768: {
+            slidesPerView: 7,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 10,
+            spaceBetween: 20,
+          },
         }}
+        modules={[Pagination]}       
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[ Navigation]}
         className="mySwiper"
       >
           
       {selectorMovie.map((el) => (
-          <SwiperSlide> 
-            <Link to={`/detailMovies/${el.id}`}> 
-              {el.title} 
-              <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100px" alt="" />
-            </Link>
-            
+          <SwiperSlide onMouseEnter={()=>setIdSeleccionado(el.id)} onMouseLeave={()=>setIdSeleccionado(undefined)}> 
+              
+              {/* {el.title}
+               */}
+              {idSeleccionado === el.id ? <CardMovies id={idSeleccionado}></CardMovies> : <img  src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100%" alt="" />}
           </SwiperSlide>
       ))}
-        
+              
       </Swiper>
     </>
   );

@@ -38,9 +38,8 @@
 }
 
 body{
-  /* background-image: linear-gradient(to bottom right, rgb(22, 17, 39), rgb(104, 87, 255));  */
-  background-image: url("./imagenes/fondo\ pochoclo.png"), linear-gradient(to bottom right, rgb(22, 17, 39), rgb(104, 87, 255));
-  
+  background-image:  linear-gradient(to bottom right, rgb(0, 0, 0), rgb(45, 36, 126));
+
  
   
   
@@ -52,7 +51,7 @@ h3{
 }
 
 .card{
-  padding: 5%;
+  padding: 3%;
   background-color: rgba(12, 11, 11, 0.966);
   width: 200%;
   position: inherit;
@@ -69,8 +68,10 @@ h3{
   border-radius: 20%;
 }
 .cardFecha{
-  
+  display: inline-block;
   border: 1px solid white;
+  margin: 0%;
+  padding: 0%;
 }
 
 .link{
@@ -79,7 +80,7 @@ h3{
 }
 
 .generos{
-  margin: 0%;
+  margin: 0%, 0%, 0%, 2%;
   padding: 0%;
   list-style: none;
   display: flex;
@@ -88,6 +89,15 @@ h3{
 }
 
 .genero{
-  padding: 3%;
+  padding: 1%;
   border: 1px solid white;
+}
+
+h4{
+  margin-bottom: 4%;
+}
+
+h5{
+  margin: 0%;
+  padding: 0%;
 }

@@ -12,6 +12,7 @@ import CardMovies from "./cardMovie";
 import { useState } from "react";
 
 
+
 export default function ListMovies() {
   const selectorMovie = useSelector((state) => state.storeMovie.stateMovies);
   console.log(selectorMovie)
@@ -22,6 +23,7 @@ export default function ListMovies() {
 
   return (
     <>
+    <img src="/logo1.PNG"/>
     <h3>Populares</h3>
       <Swiper
         slidesPerView={4}
@@ -29,15 +31,15 @@ export default function ListMovies() {
         loop={true}
         breakpoints={{
           640: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 5,
           },
           768: {
-            slidesPerView: 7,
+            slidesPerView: 5,
             spaceBetween: 15,
           },
           1024: {
-            slidesPerView: 10,
+            slidesPerView: 7,
             spaceBetween: 20,
           },
         }}

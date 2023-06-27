@@ -93,11 +93,45 @@ h3{
   border: 1px solid white;
 }
 
-h4{
+.card h4{
   margin-bottom: 4%;
 }
 
-h5{
+.card h5{
   margin: 0%;
   padding: 0%;
+}
+
+.portada{
+  display: flex;
+  align-items: center;
+}
+
+.logoPortada{
+  margin: 2% 2% 15% 2%;
+  min-width: 40%;
+}
+
+.logoPortada img{
+  max-width: 100%;
+}
+
+.logoPortada h2{
+  padding: 0% 10% 0% 10%;
+}
+
+.logoPortada button{
+  font-weight: 100;
+  padding: 0.5rem;
+  color:beige;
+  background-color: rgb(104, 87, 255);
+  border-color:  rgb(22, 17, 39);
+}
+
+.fondoPortada{
+  object-fit: cover;
+  max-width: 40%;
+  margin: 0%;
+  padding: 0%;
+
 }

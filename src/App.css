@@ -53,8 +53,8 @@ h3{
 .card{
   padding: 3%;
   background-color: rgba(12, 11, 11, 0.966);
-  width: 200%;
-  position: inherit;
+  width: 160%;
+  position: absolute;
   z-index: 999;
     
 }

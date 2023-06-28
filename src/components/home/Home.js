@@ -7,14 +7,20 @@ import NavbarPelis from "../navbarPelis";
 
 
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "../../feactures/movies/moviesSlice";
+import { fetchPopularMovies,fetchTrendingMovies, fetchTopRatedMovies, fetchActionMovies, fetchComedyMovies, fetchDramaMovies, fetchScienceFictionMovies } from "../../feactures/movies/moviesSlice";
 import { fetchGenres } from "../../feactures/genres/genresSlice";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchMovies());
+    dispatch(fetchPopularMovies());
+    dispatch(fetchTrendingMovies());
+    dispatch(fetchTopRatedMovies());
+    dispatch(fetchActionMovies());
+    dispatch(fetchComedyMovies());
+    dispatch(fetchDramaMovies());
+    dispatch(fetchScienceFictionMovies());
     dispatch(fetchGenres());
   }, [dispatch]);
 

@@ -7,7 +7,7 @@ import movieApi from "../../common/api/movieApi";
 const DetailMovies = () => {
   const { id } = useParams();
   console.log(id);
-  const movies = useSelector((state) => state.storeMovie.stateMovies);
+  const movies = useSelector((state) => state.storeMovie.popularMovies);
   const detailMovie = movies.find((item) => item.id == id);
   console.log(movies);
   const [videos, setVideos] = useState([]);

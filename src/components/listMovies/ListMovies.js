@@ -23,9 +23,9 @@ export default function ListMovies() {
 
   return (
     <>
-    <Carrousel title="Populares" movies={selectPopularMovie}></Carrousel>
     <Carrousel title="Tendencia" movies={selectTrendingMovie}></Carrousel>
     <Carrousel title="Más votadas" movies={selectTopRatedMovie}></Carrousel>
+    <Carrousel title="Populares" movies={selectPopularMovie}></Carrousel>
     <Carrousel title="Películas de acción" movies={selectActionMovie}></Carrousel>
     <Carrousel title="Comedias" movies={selectComedyMovie}></Carrousel>
     <Carrousel title="Películas dramáticas" movies={selectDramaMovie}></Carrousel>

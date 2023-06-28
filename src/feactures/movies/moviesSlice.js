@@ -46,39 +46,41 @@ export const moviesSlice = createSlice({
 export default moviesSlice.reducer;
 
 export const fetchPopularMovies = createAsyncThunk("popular/get", async () => {
-  const response = await movieApi.get(`3/movie/popular`);
+  const response = await movieApi.get(`3/movie/popular?&language=es-ES`);
   return response.data.results;
 });
 
 export const fetchTrendingMovies = createAsyncThunk("trending/get", async () => {
-  const response = await movieApi.get(`3/trending/movie/week`);
+  const response = await movieApi.get(`3/trending/movie/week?&language=es-ES`);
   return response.data.results;
 });
 
 export const fetchTopRatedMovies = createAsyncThunk("top/get", async () => {
-  const response = await movieApi.get(`3/movie/top_rated`);
+  const response = await movieApi.get(`3/movie/top_rated?&language=es-ES`);
   return response.data.results;
 });
 
 export const fetchActionMovies = createAsyncThunk("action/get", async () => {
-  const response = await movieApi.get(`/3/discover/movie?&with_genres=28`);
+  const response = await movieApi.get(`/3/discover/movie?&language=es&with_genres=28`);
   return response.data.results;
 });
 
 export const fetchComedyMovies = createAsyncThunk("comedy/get", async () => {
-  const response = await movieApi.get(`/3/discover/movie?&with_genres=35`);
+  const response = await movieApi.get(`/3/discover/movie?&language=es&with_genres=35`);
   return response.data.results;
 });
 
 export const fetchDramaMovies = createAsyncThunk("drama/get", async () => {
-  const response = await movieApi.get(`/3/discover/movie?&with_genres=18`);
+  const response = await movieApi.get(`/3/discover/movie?&language=es&with_genres=18`);
   return response.data.results;
 });
 
 export const fetchScienceFictionMovies = createAsyncThunk("sf/get", async () => {
-  const response = await movieApi.get(`/3/discover/movie?&with_genres=878`);
+  const response = await movieApi.get(`/3/discover/movie?&language=es&with_genres=878`);
   return response.data.results;
 });
+
+
 
 // MOVIE GENRE CODE
 // Adventure       12

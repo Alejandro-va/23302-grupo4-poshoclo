@@ -49,7 +49,7 @@ export default function Carrousel(props) {
           
       {movies.map((el) => (
           <SwiperSlide onMouseEnter={()=>setIdSeleccionado(el.id)} onMouseLeave={()=>setIdSeleccionado(undefined)}> 
-              {idSeleccionado === el.id ? <CardMovies id={idSeleccionado}></CardMovies> : <img  src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100%" alt="" />}
+              {idSeleccionado === el.id ? <CardMovies movie={el}></CardMovies> : <img  src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100%" alt="" />}
           </SwiperSlide>
       ))}
               

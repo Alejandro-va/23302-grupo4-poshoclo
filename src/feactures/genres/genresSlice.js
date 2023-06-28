@@ -21,6 +21,6 @@ export const genresSlice = createSlice({
 export default genresSlice.reducer;
 
 export const fetchGenres = createAsyncThunk("genres/get", async () => {
-  const response = await movieApi.get(`3/genre/movie/list?language=en`);
+  const response = await movieApi.get(`3/genre/movie/list?&language=es`);
   return response.data.genres;
 });

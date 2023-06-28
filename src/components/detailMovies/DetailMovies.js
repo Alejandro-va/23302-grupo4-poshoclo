@@ -7,11 +7,16 @@ import movieApi from "../../common/api/movieApi";
 const DetailMovies = () => {
   const { id } = useParams();
   console.log(id);
-  const movies = useSelector((state) => state.storeMovie.popularMovies);
-  const detailMovie = movies.find((item) => item.id == id);
-  console.log(movies);
+
+  const [detailMovie, setDetailMovie] = useState([]);
   const [videos, setVideos] = useState([]);
-   
+  
+  useEffect (() =>{
+    (movieApi.get(`3/movie/${id}`))
+    .then(response => setDetailMovie(response.data))
+  }, [id]) 
+
+  
   useEffect (() =>{
     (movieApi.get(`3/movie/${id}/videos`))
     .then(response => setVideos(response.data.results))
@@ -26,9 +31,10 @@ const DetailMovies = () => {
 
   return (
     <div>
-      DetailMovies
       <h1>{detailMovie.title}</h1>
-      <span>--{id}</span>
+      <h5>{detailMovie.tagline}</h5>
+      
+
       <img src={"https://image.tmdb.org/t/p/w500/" +  detailMovie.poster_path } height={"200px"} alt="" />
       <div>
         {/* 

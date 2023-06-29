@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Carrousel from "./Carrousel";
+import Search from "../search";
 
 
 
@@ -23,6 +24,7 @@ export default function ListMovies() {
 
   return (
     <>
+    <Search></Search>
     <Carrousel title="Tendencia" movies={selectTrendingMovie}></Carrousel>
     <Carrousel title="Más votadas" movies={selectTopRatedMovie}></Carrousel>
     <Carrousel title="Populares" movies={selectPopularMovie}></Carrousel>

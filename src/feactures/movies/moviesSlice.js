@@ -4,12 +4,15 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import movieApi from "../../common/api/movieApi";
 
 
-const initialState = { popularMovies: [], trendingMovies: [], topRatedMovies: [], actionMovies:[], comedyMovies:[], dramaMovies:[],scienceFictionMovies: [] };
+const initialState = { search: "", popularMovies: [], trendingMovies: [], topRatedMovies: [], actionMovies:[], comedyMovies:[], dramaMovies:[],scienceFictionMovies: [] };
 
 export const moviesSlice = createSlice({
   name: "movie",
   initialState,
-  reducers: {},
+  reducers: {
+    //va a cambiar el valor del search de arriba
+    setSearch:(state,action)=>{state.search=action.payload}
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPopularMovies.pending, (state, action) => {
@@ -44,6 +47,8 @@ export const moviesSlice = createSlice({
 });
 
 export default moviesSlice.reducer;
+
+export const {setSearch}=moviesSlice.actions;
 
 export const fetchPopularMovies = createAsyncThunk("popular/get", async () => {
   const response = await movieApi.get(`3/movie/popular?&language=es-ES`);

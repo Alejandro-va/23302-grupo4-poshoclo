@@ -9,7 +9,8 @@ import NavbarPelis from "../navbarPelis";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularMovies,fetchTrendingMovies, fetchTopRatedMovies, fetchActionMovies, fetchComedyMovies, fetchDramaMovies, fetchScienceFictionMovies } from "../../feactures/movies/moviesSlice";
 import { fetchGenres } from "../../feactures/genres/genresSlice";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Home = () => {
   const dispatch = useDispatch();

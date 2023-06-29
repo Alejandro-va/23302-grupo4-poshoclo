@@ -4,10 +4,24 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
+import { useDispatch, useSelector } from "react-redux";
+import {setSearch} from "../feactures/movies/moviesSlice";
+
+
 const NavbarPelis=()=>{
+	const dispatch = useDispatch();
+
+	//registro lo que escribe el usuario
+	const search = useSelector((state) => state.storeMovie.search);
+	const searcher = (e) =>{
+		dispatch(
+		setSearch(e.target.value))
+		console.log(e.target)
+	}
 
 return(
-	<Navbar expand="lg" className="bg-body-tertiary">
+	<Navbar expand="lg" className="bg-body-tertiary ">
 	<Container fluid>
 	  <Navbar.Brand as={Link} to="/">PoshoClo</Navbar.Brand>
 	  <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,6 +35,7 @@ return(
 		</Nav>
 		<Form className="d-flex">
 		  <Form.Control
+		  	value={search} onChange={searcher}
 			type="search"
 			placeholder="Search"
 			className="me-2"
@@ -29,8 +44,13 @@ return(
 		  <Button variant="outline-success">Search</Button>
 		</Form>
 	  </Navbar.Collapse>
+
+	  {/* sacar esto de aca */}
 	</Container>
+	 
   </Navbar>
+
+
 );
 }
 export default NavbarPelis

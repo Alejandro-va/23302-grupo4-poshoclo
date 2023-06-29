@@ -11,6 +11,7 @@ import { fetchPopularMovies,fetchTrendingMovies, fetchTopRatedMovies, fetchActio
 import { fetchGenres } from "../../feactures/genres/genresSlice";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {

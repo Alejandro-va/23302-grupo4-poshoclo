@@ -12,11 +12,11 @@ const CardMovies = (params) => {
   }
   
 return (
-    <div className="card">
+    <div className="resumen">
       <h4>{movie.title}</h4>
-      <h5 className="cardFecha">Fecha: {movie.release_date}</h5>
+      <h5 className="resumenFecha">Fecha: {movie.release_date}</h5>
       <h5>Puntaje : {movie.vote_average}</h5>
-      <button className="cardButton">
+      <button className="resumenButton">
       <Link to={`/detailMovies/${movie.id}`} className="link">VER</Link>
       </button>
       <ul className="generos">{genres.map(genre=><li className="genero" key={genre.id}>{genre.name}</li>)}</ul>

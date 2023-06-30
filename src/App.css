@@ -38,47 +38,32 @@
 }
 
 body{
-  background-image:  linear-gradient(to bottom right, rgb(0, 0, 0), rgb(45, 36, 126));
-
- 
-  
-  
+  background-image:  linear-gradient(to bottom right, rgb(0, 0, 0), rgb(43, 34, 129));
   color: rgb(255, 242, 233);
 }
 
-h3{
+.swiper{
+  margin-bottom: 5%;
+}
+
+.textoCarrousel{
   text-align: start;
   color: rgb(255, 242, 233);
-}
-
-.resumen{
-  padding: 3%;
-  background-color: rgba(12, 11, 11, 0.966);
-  width: 200px;
-  position: absolute;
-  z-index: 999;
-  color: rgb(255, 242, 233);
-    
-}
-
-.resumenButton{
-  font-weight: 600;
-  padding: 0.5rem;
-  color:beige;
-  background-color: rgb(104, 87, 255);
-  border-color:  rgb(22, 17, 39);
-  border-radius: 20%;
-}
-.resumenFecha{
-  display: inline-block;
-  border: 1px solid white;
-  margin: 0%;
-  padding: 0%;
+  margin-left: 2%;
 }
 
 .link{
   text-decoration: none;
   color:beige;
+}
+
+.poster{
+  z-index: 0;
+}
+
+.card{
+  z-index: 1;
+  width: 110%;
 }
 
 .generos{
@@ -92,18 +77,19 @@ h3{
 
 .genero{
   padding: 1%;
-  border: 1px solid white;
 }
 
-.resumen h4{
-  margin-bottom: 4%;
-  color: rgb(255, 242, 233);
+
+.iconosCard{
+  display: grid;
+  padding: 2% 0 5% 0;
+  grid-row: 1;
+  grid-template-columns: 3fr 1fr;
 }
 
-.resumen h5{
-  margin: 0%;
-  padding: 0%;
-  color: rgb(255, 242, 233);
+.juntos{
+  display:flex
+  
 }
 
 .portada{
@@ -152,7 +138,30 @@ h3{
 .grilla li{
   
   max-width: 170px;
-  
-  
-  
+}
+
+.barraNav {
+  background-color:rgba(20, 27, 66, 0.712);
+  /* background-image:  linear-gradient(to bottom , rgba(10, 8, 32, 0.308) , rgba(45, 36, 126, 0.37)); */
+}
+
+#navbarScroll{
+  margin-top: 10px;
+
+}
+
+.detalle{
+  color: rgb(255, 255, 255);
+  margin: 2%;
+}
+
+.row{
+  margin-bottom:2% ;
+  text-align: center;
+}
+
+.row p{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: justify;
 }

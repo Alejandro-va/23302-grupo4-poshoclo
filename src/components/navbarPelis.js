@@ -21,9 +21,9 @@ const NavbarPelis=()=>{
 	}
 
 return(
-	<Navbar expand="lg" className="bg-body-tertiary ">
+	<Navbar expand="lg" className="barraNav" data-bs-theme="dark">
 	<Container fluid>
-	  <Navbar.Brand as={Link} to="/">PoshoClo</Navbar.Brand>
+	  <Navbar.Brand as={Link} to="/" ><img src="/logo1.PNG" width={"130px"} alt=""/></Navbar.Brand>
 	  <Navbar.Toggle aria-controls="navbarScroll" />
 	  <Navbar.Collapse id="navbarScroll">
 		<Nav
@@ -31,7 +31,7 @@ return(
 		  style={{ maxHeight: '100px' }}
 		  navbarScroll
 		>
-          <Nav.Link as={Link} to="/Peliculas">Peliculas</Nav.Link>
+          <Nav.Link as={Link} to="/Peliculas" >Peliculas</Nav.Link>
 		</Nav>
 		<Form className="d-flex">
 		  <Form.Control
@@ -41,7 +41,7 @@ return(
 			className="me-2"
 			aria-label="Search"
 		  />
-		  <Button variant="outline-success">Search</Button>
+		  {/* <Button variant="outline-success">Search</Button> */}
 		</Form>
 	  </Navbar.Collapse>
 

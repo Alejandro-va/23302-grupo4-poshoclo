@@ -22,14 +22,14 @@ export default function Carrousel(props) {
 
   return (
     <>
-      <h3>{props.title}</h3>
+      <h4 className="textoCarrousel">{props.title}</h4>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={3}
         spaceBetween={10}
         loop={true}
         breakpoints={{
           640: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 5,
           },
           768: {
@@ -49,7 +49,7 @@ export default function Carrousel(props) {
           
       {movies.map((el) => (
           <SwiperSlide onMouseEnter={()=>setIdSeleccionado(el.id)} onMouseLeave={()=>setIdSeleccionado(undefined)}> 
-              {idSeleccionado === el.id ? <CardMovies movie={el}></CardMovies> : <img  src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100%" alt="" />}
+              {idSeleccionado === el.id ? <CardMovies movie={el}></CardMovies> : <img  src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} width="100%" alt="" className="poster"/>}
           </SwiperSlide>
       ))}
               

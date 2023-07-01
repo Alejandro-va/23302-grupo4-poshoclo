@@ -43,6 +43,14 @@ return(
 		  />
 		  {/* <Button variant="outline-success">Search</Button> */}
 		</Form>
+		<Form className="d-flex">
+			  <Link to={`/LoginPelis`}><Button  variant="primary" size="lg"  className="p-2 m-1">
+        Inicial Sesión
+      </Button>{' '}</Link>
+	  <Link to={`/Register`}>  <Button  variant="Dark" size="lg" className="p-2 m-1">
+        Registrarse
+      </Button></Link>
+			  </Form>
 	  </Navbar.Collapse>
 
 	  {/* sacar esto de aca */}

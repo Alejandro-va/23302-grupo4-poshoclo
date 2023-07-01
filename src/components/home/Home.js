@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DetailMovies from "../detailMovies/DetailMovies";
 import Portada from "../portada";
 import NavbarPelis from "../navbarPelis";
-
+import LoginPelis from "../LoginPelis";
+import BarraLogin from "../BarraLogin";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularMovies,fetchTrendingMovies, fetchTopRatedMovies, fetchActionMovies, fetchComedyMovies, fetchDramaMovies, fetchScienceFictionMovies } from "../../feactures/movies/moviesSlice";
@@ -29,11 +30,10 @@ const Home = () => {
     <div>
       <BrowserRouter>
         <Routes>
-        
+        <Route path="/LoginPelis" element={<div><NavbarPelis /><LoginPelis /></div>} />
           <Route path="/peliculas" element={<div><NavbarPelis /><ListMovies /></div>} />
           <Route path="/detailMovies/:id" element={<div><NavbarPelis /><DetailMovies /></div>} />
- 
-          <Route path="/" element={<div><NavbarPelis /><Portada /></div>} />
+          <Route path="/" element={<div><BarraLogin /><Portada /></div>}/>
         </Routes>
       </BrowserRouter>
     </div>

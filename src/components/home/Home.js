@@ -5,12 +5,19 @@ import DetailMovies from "../detailMovies/DetailMovies";
 import Portada from "../portada";
 import NavbarPelis from "../navbarPelis";
 
-
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPopularMovies,fetchTrendingMovies, fetchTopRatedMovies, fetchActionMovies, fetchComedyMovies, fetchDramaMovies, fetchScienceFictionMovies } from "../../feactures/movies/moviesSlice";
+import {
+  fetchPopularMovies,
+  fetchTrendingMovies,
+  fetchTopRatedMovies,
+  fetchActionMovies,
+  fetchComedyMovies,
+  fetchDramaMovies,
+  fetchScienceFictionMovies,
+} from "../../feactures/movies/moviesSlice";
 import { fetchGenres } from "../../feactures/genres/genresSlice";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "../login/Login";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -29,11 +36,42 @@ const Home = () => {
     <div>
       <BrowserRouter>
         <Routes>
-        
-          <Route path="/peliculas" element={<div><NavbarPelis /><ListMovies /></div>} />
-          <Route path="/detailMovies/:id" element={<div><NavbarPelis /><DetailMovies /></div>} />
- 
-          <Route path="/" element={<div><NavbarPelis /><Portada /></div>} />
+          <Route
+            path="/"
+            element={
+              <div>
+                <NavbarPelis />
+                <Portada />
+              </div>
+            }
+          />
+          <Route
+            path="/peliculas"
+            element={
+              <div>
+                <NavbarPelis />
+                <ListMovies />
+              </div>
+            }
+          />
+          <Route
+            path="/detailMovies/:id"
+            element={
+              <div>
+                <NavbarPelis />
+                <DetailMovies />
+              </div>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <div>
+                {/* <NavbarPelis /> */}
+                <Login />
+              </div>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

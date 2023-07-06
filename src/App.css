@@ -37,36 +37,40 @@
   }
 }
 
-body{
-  background-image:  linear-gradient(to bottom right, rgb(0, 0, 0), rgb(43, 34, 129));
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(0, 0, 0),
+    rgb(43, 34, 129)
+  );
   color: rgb(255, 242, 233);
 }
 
-.swiper{
+.swiper {
   margin-bottom: 5%;
 }
 
-.textoCarrousel{
+.textoCarrousel {
   text-align: start;
   color: rgb(255, 242, 233);
   margin-left: 2%;
 }
 
-.link{
+.link {
   text-decoration: none;
-  color:beige;
+  color: beige;
 }
 
-.poster{
+.poster {
   z-index: 0;
 }
 
-.card{
+.card {
   z-index: 1;
   width: 110%;
 }
 
-.generos{
+.generos {
   margin: 0%, 0%, 0%, 2%;
   padding: 0%;
   list-style: none;
@@ -75,92 +79,87 @@ body{
   justify-content: center;
 }
 
-.genero{
+.genero {
   padding: 1%;
 }
 
-
-.iconosCard{
+.iconosCard {
   display: grid;
   padding: 2% 0 5% 0;
   grid-row: 1;
   grid-template-columns: 3fr 1fr;
 }
 
-.juntos{
-  display:flex
-  
+.juntos {
+  display: flex;
 }
 
-.portada{
+.portada {
   display: flex;
   align-items: center;
   color: rgb(255, 242, 233);
 }
 
-.logoPortada{
+.logoPortada {
   margin: 2% 2% 15% 2%;
   min-width: 40%;
 }
 
-.logoPortada img{
+.logoPortada img {
   max-width: 100%;
 }
 
-.logoPortada h2{
+.logoPortada h2 {
   padding: 0% 10% 0% 10%;
 }
 
-.logoPortada button{
+.logoPortada button {
   font-weight: 100;
   padding: 0.5rem;
-  color:beige;
+  color: beige;
   background-color: rgb(104, 87, 255);
-  border-color:  rgb(22, 17, 39);
+  border-color: rgb(22, 17, 39);
 }
 
-.fondoPortada{
+.fondoPortada {
   object-fit: cover;
   max-width: 40%;
   margin: 0%;
   padding: 0%;
-
 }
 
-.grilla{
+.grilla {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   list-style: none;
-  
 }
 
-.grilla li{
-  
+.grilla li {
   max-width: 170px;
 }
 
 .barraNav {
-  background-color:rgba(20, 27, 66, 0.712);
+  background-color: rgba(20, 27, 66, 0.712);
   /* background-image:  linear-gradient(to bottom , rgba(10, 8, 32, 0.308) , rgba(45, 36, 126, 0.37)); */
 }
 
-#navbarScroll{
+#navbarScroll {
   margin-top: 10px;
-
 }
 
-.detalle{
+.detalle {
   color: rgb(255, 255, 255);
   margin: 2%;
 }
 
-.row{
-  margin-bottom:2% ;
+.row {
+  margin-bottom: 2%;
   text-align: center;
+  background: #19144b;
 }
 
-.row p{
+.row p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: justify;

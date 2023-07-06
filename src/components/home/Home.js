@@ -5,7 +5,7 @@ import DetailMovies from "../detailMovies/DetailMovies";
 import Portada from "../portada";
 import NavbarPelis from "../navbarPelis";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   fetchPopularMovies,
   fetchTrendingMovies,

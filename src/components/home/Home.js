@@ -18,6 +18,7 @@ import {
 import { fetchGenres } from "../../feactures/genres/genresSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "../login/Login";
+import Signup from "../signup/Signup";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,15 @@ const Home = () => {
               <div>
                 {/* <NavbarPelis /> */}
                 <Login />
+              </div>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <div>
+                {/* <NavbarPelis /> */}
+                <Signup />
               </div>
             }
           />

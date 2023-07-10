@@ -5,6 +5,10 @@ import DetailMovies from "../detailMovies/DetailMovies";
 import Portada from "../portada";
 import NavbarPelis from "../navbarPelis";
 
+//alert
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { useDispatch } from "react-redux";
 import {
   fetchPopularMovies,
@@ -37,6 +41,13 @@ const Home = () => {
   return (
     <div>
       <BrowserRouter>
+        <ToastContainer
+          theme="dark"
+          position="top-right"
+          autoClose={1000}
+          closeOnClick
+          pauseOnHover={false}
+        />
         <Routes>
           <Route
             path="/"

@@ -75,7 +75,7 @@ const Signup = () => {
       );
 
       setLoading(false);
-      toast.success("Account created");
+      toast.success("Cuenta creada");
       navigate("/login");
       console.log(user);
     } catch (error) {
@@ -102,6 +102,7 @@ const Signup = () => {
                   <Input
                     type="text"
                     placeholder="Username"
+                    required
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
@@ -111,6 +112,7 @@ const Signup = () => {
                   <Input
                     type="email"
                     placeholder="Introducir email"
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -121,6 +123,8 @@ const Signup = () => {
                     type="password"
                     placeholder="Introducir password"
                     autoComplete="on"
+                    required
+                    minlength="6"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -128,6 +132,7 @@ const Signup = () => {
 
                 <FormGroup className="form__group">
                   <Input
+                    required
                     type="file"
                     onChange={(e) => setFile(e.target.files[0])}
                   />
@@ -136,6 +141,19 @@ const Signup = () => {
                 <button type="submit" className="auth__btn">
                   Create una cuenta
                 </button>
+                <Link
+                  to="/"
+                  className="auth__btn"
+                  style={{
+                    textDecoration: "none",
+                    padding: ".8rem 2rem",
+                    marginLeft: ".5rem",
+                    outline: "none",
+                    background: "red",
+                  }}
+                >
+                  Cancel
+                </Link>
                 <p>
                   Ya tienes una cuenta?
                   <Link to="/login">Login</Link>

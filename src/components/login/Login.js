@@ -30,7 +30,7 @@ const Login = () => {
       console.log("login: ", user);
 
       setLoading(false);
-      toast.success("Successfully logged in");
+      toast.success("Inicio exitoso");
       navigate("/peliculas");
     } catch (error) {
       setLoading(false);
@@ -55,6 +55,7 @@ const Login = () => {
                   <Input
                     type="email"
                     placeholder="Introducir email"
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -64,6 +65,7 @@ const Login = () => {
                   <Input
                     type="password"
                     placeholder="Introducir password"
+                    required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -72,6 +74,19 @@ const Login = () => {
                 <button type="submit" className="auth__btn">
                   Login
                 </button>
+                <Link
+                  to="/"
+                  className="auth__btn"
+                  style={{
+                    textDecoration: "none",
+                    padding: ".8rem 2rem",
+                    marginLeft: ".5rem",
+                    outline: "none",
+                    background: "red",
+                  }}
+                >
+                  Cancel
+                </Link>
                 <p>
                   No tienes una cuenta?
                   <Link to="/signup"> Create una cuenta</Link>

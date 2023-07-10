@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -11,9 +11,15 @@ import avatar from "../images/usuario1.jpg";
 //auth
 import useAuth from "../custom-hooks/useAuth";
 import { useRef } from "react";
+import { toast } from "react-toastify";
+
+//firebase
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase.config";
 
 const NavbarPelis = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   //auth usuario
   const { currentUser } = useAuth();
@@ -30,6 +36,20 @@ const NavbarPelis = () => {
   const avatarActionsRef = useRef(null);
   const toggleProfileActions = () =>
     avatarActionsRef.current.classList.toggle("show_avatar_actions");
+
+  console.log("show_avatar_actions");
+
+  /*****************************
+   * LOGOUT
+   ****************************/
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Fuera de sesión");
+        navigate("/login");
+      })
+      .catch((error) => toast.error(error.message));
+  };
   return (
     <Navbar expand="lg" className="barraNav" data-bs-theme="dark">
       <Container fluid>
@@ -72,29 +92,30 @@ const NavbarPelis = () => {
         </Navbar.Collapse>
 
         {/* sacar esto de aca */}
-        <span className="avatar">
-          <p>{currentUser.displayName}</p>
+        <div className="avatar">
+          <p>{currentUser ? currentUser.displayName : "desconocido"}</p>
           <img
             src={currentUser ? currentUser.photoURL : avatar}
             alt=""
             onClick={toggleProfileActions}
           />
-
+          {/* BOTON */}
           <div
             className="avatar_actions"
             ref={avatarActionsRef}
             onClick={toggleProfileActions}
           >
             {currentUser ? (
-              <span>Logout</span>
+              <span onClick={logout}>Logout</span>
             ) : (
               <div>
+                {/* BOTONES Login & Signup */}
                 <Link to="/signup">Signup</Link>
                 <Link to="/login">Login</Link>
               </div>
             )}
           </div>
-        </span>
+        </div>
       </Container>
     </Navbar>
   );

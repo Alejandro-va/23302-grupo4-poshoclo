@@ -13,6 +13,7 @@
   background: #000;
   border-radius: 5%;
   padding: 2% 8%;
+  text-decoration: none;
 }
 
 .auth__form p {

@@ -2,14 +2,37 @@ import React, { useState } from "react";
 
 import "./login.css";
 import { Col, Container, Form, FormGroup, Input, Row } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+//firebase
+import { auth } from "../../firebase.config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+//mensajeria
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      setLoading(false);
+      toast.success("Successfully logged in");
+      navigate("/checkout");
+    } catch (error) {
+      setLoading(false);
+      toast.success(error.message);
+    }
   };
 
   return (

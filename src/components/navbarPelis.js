@@ -37,7 +37,6 @@ const NavbarPelis = () => {
               to="/Peliculas"
               style={{
                 fontSize: "1.2rem",
-                fontWeight: "bold",
               }}
             >
               Peliculas
@@ -51,6 +50,9 @@ const NavbarPelis = () => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              style={{
+                background:"rgba(0, 0, 0,0.4)",
+              }}
             />
             {/* <Button variant="outline-success">Search</Button> */}
           </Form>

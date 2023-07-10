@@ -36,7 +36,7 @@ const DetailMovies = () => {
     <Container
       data-bs-theme="dark"
       className="detalle"
-      style={{ background: "#19144b" }}
+      
     >
       <Row>
         <Col>

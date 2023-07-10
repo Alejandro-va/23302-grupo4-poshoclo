@@ -37,7 +37,7 @@ const Login = () => {
 
   return (
     <>
-      <Container className="container">
+      <Container className="container_">
         <Row className="container__row">
           <Col lg="6" className="m-auto mt-5 text-center">
             <h3 className="">Login</h3>

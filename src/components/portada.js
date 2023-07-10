@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Portada() {
   return (
-    <div className="portada" style={{ overflow: "hidden", height: "88vh" }}>
+    <div className="portada" style={{ overflow: "hidden"}}>
       <div className="logoPortada">
         <img
           src="/logo1.PNG"

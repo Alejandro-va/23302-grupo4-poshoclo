@@ -87,7 +87,7 @@ const Signup = () => {
 
   return (
     <>
-      <Container className="container">
+      <Container className="container_">
         <Row className="container__row">
           {loading ? (
             <Col lg="12" className="text-center">

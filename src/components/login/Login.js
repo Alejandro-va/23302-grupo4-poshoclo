@@ -26,9 +26,12 @@ const Login = () => {
         password
       );
 
+      const user = userCredential.user;
+      console.log("login: ", user);
+
       setLoading(false);
       toast.success("Successfully logged in");
-      navigate("/checkout");
+      navigate("/peliculas");
     } catch (error) {
       setLoading(false);
       toast.success(error.message);
@@ -39,37 +42,43 @@ const Login = () => {
     <>
       <Container className="container_">
         <Row className="container__row">
-          <Col lg="6" className="m-auto mt-5 text-center">
-            <h3 className="">Login</h3>
+          {loading ? (
+            <Col lg="12" className="text-center">
+              <h5 className="fw-bold">Loading...</h5>{" "}
+            </Col>
+          ) : (
+            <Col lg="6" className="m-auto mt-5 text-center">
+              <h3 className="">Login</h3>
 
-            <Form className="auth__form mt-5" onSubmit={signIn}>
-              <FormGroup className="form__group">
-                <Input
-                  type="email"
-                  placeholder="Introducir email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </FormGroup>
+              <Form className="auth__form mt-5" onSubmit={signIn}>
+                <FormGroup className="form__group">
+                  <Input
+                    type="email"
+                    placeholder="Introducir email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </FormGroup>
 
-              <FormGroup className="form__group">
-                <Input
-                  type="password"
-                  placeholder="Introducir password"
-                  value={email}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </FormGroup>
+                <FormGroup className="form__group">
+                  <Input
+                    type="password"
+                    placeholder="Introducir password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </FormGroup>
 
-              <button type="submit" className="auth__btn">
-                Login
-              </button>
-              <p>
-                No tienes una cuenta?
-                <Link to="/signup"> Create una cuenta</Link>
-              </p>
-            </Form>
-          </Col>
+                <button type="submit" className="auth__btn">
+                  Login
+                </button>
+                <p>
+                  No tienes una cuenta?
+                  <Link to="/signup"> Create una cuenta</Link>
+                </p>
+              </Form>
+            </Col>
+          )}
         </Row>
       </Container>
     </>

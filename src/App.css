@@ -160,11 +160,53 @@ body {
 .row {
   margin-bottom: 2%;
   text-align: center;
-  
 }
 
 .row p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: justify;
+}
+
+/***************************
+* AVATAR
+***************************/
+.avatar {
+  display: flex;
+  align-items: center;
+  /*   border: 1px solid red; */
+  justify-content: end;
+  margin-right: 1rem;
+  max-width: 9rem;
+}
+.avatar img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.avatar p {
+  text-transform: lowercase;
+  margin: 0 1rem;
+  color: #fff;
+}
+.avatar p:first-letter {
+  text-transform: uppercase;
+}
+
+.avatar_actions {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 5;
+  z-index: 90;
+  color: #fff;
+  padding: 15px;
+  background-color: #282c34;
+  cursor: pointer;
+}
+
+.show_avatar_actions {
+  display: block;
 }

@@ -19,6 +19,7 @@ import { fetchGenres } from "../../feactures/genres/genresSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "../login/Login";
 import Signup from "../signup/Signup";
+import ProtectedRoute from "../protectedRoute.js/ProtectedRoute";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -50,8 +51,10 @@ const Home = () => {
             path="/peliculas"
             element={
               <div>
-                <NavbarPelis />
-                <ListMovies />
+                <ProtectedRoute>
+                  <NavbarPelis />
+                  <ListMovies />
+                </ProtectedRoute>
               </div>
             }
           />
